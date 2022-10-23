@@ -1,0 +1,45 @@
+nav{
+  padding: 10px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  align-items: center;
+  background-color: #f1f1f104;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.navitem{
+  display: flex;
+  gap: 15px;
+  
+}
+.search{
+ 
+      border: 1px solid #eee;
+      display: block;
+      width: 30%;
+      font-size: 1rem;
+      padding: 5px;
+      border-radius: 0.4rem;
+      background: rgba(238, 238, 238, 0.103);
+      transition: 0.2s;
+   
+    
+    
+}
+.search:focus,
+    .search:hover {
+      outline: none;
+      border-color: #fb1;
+      background: white;
+      box-shadow: 0 0 0 3px #fea;
+    }
+
+@media (max-width:520px) {
+  .nav h1{
+    display: none;
+  }
+  
+}

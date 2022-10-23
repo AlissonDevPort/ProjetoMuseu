@@ -1,0 +1,62 @@
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.login::before {
+  display: block;
+  content: "";
+  background: url("../../Assets/dino.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.forms {
+  max-width: 30rem;
+  padding: 1rem;
+  margin-top: 20vh;
+}
+
+@media (max-width: 40rem) {
+  .login {
+    grid-template-columns: 1fr;
+  }
+  .login::before {
+    display: none;
+  }
+  .forms {
+    max-width: 100%;
+  }
+}
+
+.form {
+  margin-bottom: 2rem;
+}
+
+
+
+.cadastro {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitle::after {
+  content: "";
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
