@@ -13,6 +13,29 @@
    
 }
 
+.search{
+ 
+    border: 1px solid #eee;
+    display: block;
+    width: 30%;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 0.4rem;
+    background: rgba(238, 238, 238, 0.103);
+    transition: 0.2s;
+    
+    
+  
+  
+}
+.search:focus,
+  .search:hover {
+    outline: none;
+    border-color: #fb1;
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+  }
+
 .img{
     margin: 10px;
     max-height: 350px;
