@@ -5,6 +5,7 @@ import Nav from "../Nav/Nav";
 
 const Department = () => {
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const { id } = useParams();
 
   const find = async () => {
@@ -30,21 +31,39 @@ const Department = () => {
   return (
     <div>
       <Nav />
+      <input
+        className={Styles.search}
+        type="text"
+        placeholder="Search"
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
+      />
       <div className={Styles.departs}>
-        {data.map((key) => (
-          <div className={Styles.items} key={key.objectID}>
-            <div className={Styles.img}>
-              <a href={`/art/${key.objectID}`}>
-                <img src={key?.primaryImageSmall} />
-              </a>
+        {data
+          .filter((val) => {
+            if (searchTerm === "") {
+              console.log(data)
+              return val;
+            } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+              console.log(data)
+               return val
+            }
+          })
+          .map((key) => (
+            <div className={Styles.items} key={key.objectID}>
+              <div className={Styles.img}>
+                <a href={`/art/${key.objectID}`}>
+                  <img src={key?.primaryImageSmall} />
+                </a>
+              </div>
+              <div className={Styles.name}>{key?.title}</div>
+              <div className={Styles.infos}>
+                Artist:{key?.artistDisplayName}
+                Date:{key?.objectDate}
+              </div>
             </div>
-            <div className={Styles.name}>Nome:{key?.title}</div>
-            <div className={Styles.infos}>
-              Obra:{key?.artistDisplayName}
-              Data:{key?.objectDate}
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

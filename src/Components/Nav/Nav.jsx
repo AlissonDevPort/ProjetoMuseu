@@ -8,7 +8,6 @@ const Nav = () => {
         {" "}
         <a href="/">MentorApp</a>{" "}
       </h1>
-      <input className={styles.search} type="text" placeholder="Search" />
       <ul className={styles.navitem}>
         <li>
           <a href="/"> Home</a>
